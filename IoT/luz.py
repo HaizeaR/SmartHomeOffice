@@ -14,6 +14,7 @@ class Iluminacion():
         # Grove - Ultrasonic Ranger connected to port D16
         sensor = GroveLightSensor(self.puerto)
         luz = sensor.light
+        
         return luz
     
     # -1 baja la intensidad de la luz
@@ -23,10 +24,10 @@ class Iluminacion():
         
         situacion = 0 
         
-        if luz < 20:
+        if (luz < 300):
             situacion = 1
             
-        else if luz > 40:
+        elif (luz > 600):
             situacion = -1
         else:
             situacion = 0 
