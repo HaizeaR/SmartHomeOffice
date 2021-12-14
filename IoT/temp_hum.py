@@ -35,9 +35,9 @@ class TemperaturaHumedad():
         
         situHum = 0
         
-        if (temp < 30):
+        if (hum < 30):
             situHum = 1
-        elif (temp > 50):
+        elif (hum > 50):
             situHum = -1
         
         return situHum 
