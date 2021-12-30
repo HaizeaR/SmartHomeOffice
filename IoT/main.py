@@ -1,5 +1,6 @@
 import logging
 import time
+import RPi.GPIO as GPIO
 from grove.grove_servo import GroveServo
 from distance import Distancia
 from temp_hum import TemperaturaHumedad
@@ -15,7 +16,7 @@ logging.basicConfig(level=logging.INFO,
 log = logging.getLogger(__name__)
 
 thingsboard_server = "thingsboard.cloud"
-access_token = "SYqJIOvyP55HwvSq2oAf"
+access_token = "vdN4FuEf0yErZN8sScLF"
 
 
 def main():
@@ -26,11 +27,13 @@ def main():
     
     # INCIALIZAR SENSORES
     # =======================
-    d = Distancia(16) # inicializar sensor de ultrasonidos
+    #d = Distancia(16) # inicializar sensor de ultrasonidos
     
     ht = TemperaturaHumedad(5) #inicializar sensor humedad y temp
     
     l = Iluminacion(0) # inicializar este sensor de luz
+    
+    GPIO.setup(22, GPIO.OUT) #Definir el pin 22 como salida del (led)
     
     # Callback for server RPC requests (Used for control servo and led blink)
     def on_server_side_rpc_request(client, request_id, request_body):
@@ -58,7 +61,8 @@ def main():
         try:
             while True:
                 # mide la distancia 
-                distanciaPersona = d.calcularDistancia()
+                #distanciaPersona = d.calcularDistancia()
+                distanciaPersona = 20
                 log.debug('distancia: {} cm'.format(distanciaPersona))
 
                 humtemp = ht.leerValores()
@@ -69,8 +73,8 @@ def main():
 
                 # Formatting the data for sending to ThingsBoard
                 telemetry = {'distancia': distanciaPersona,
-                             'temperatura': humtemp[0],
-                             'humedad': humtemp[1],
+                             'temperatura': humtemp[1],
+                             'humedad': humtemp[0],
                              'luz': situacion_luz}
 
                 # Sending the data
@@ -78,17 +82,27 @@ def main():
                 
                 situTemp = ht.controlTemperatura(humtemp[0])
                 situHum= ht.controlHumedad(humtemp[1])
-                print(situTemp)
+              
+                situLuz = l.situacionDeLuz(situacion_luz)
+                print(situLuz)
+                if(situLuz== -1):
+                    GPIO.output(22, True)
+                    print("Entr")
+                    time.sleep(.2)
+                else:
+                    GPIO.output(22,False)
                 
-                print(situHum)
-                time.sleep(.5) # mide todo cada x tiempo (2seg)
+                
+                time.sleep(.10) # mide todo cada x tiempo (2seg)
                 
 
                 
         except Exception as e:
             raise e
+            
         finally:
             client.disconnect()
+            GPIO.cleanup()
         
         return [situTemp, situHum]
 
