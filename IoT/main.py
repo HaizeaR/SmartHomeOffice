@@ -16,7 +16,7 @@ logging.basicConfig(level=logging.INFO,
 log = logging.getLogger(__name__)
 
 thingsboard_server = "thingsboard.cloud"
-access_token = "vdN4FuEf0yErZN8sScLF"
+access_token = "XyuDAUVr1ukFPEoR59HX"
 
 
 def main():
@@ -33,7 +33,7 @@ def main():
     
     l = Iluminacion(0) # inicializar este sensor de luz
     
-    GPIO.setup(22, GPIO.OUT) #Definir el pin 22 como salida del (led)
+    GPIO.setup(22, GPIO.OUT) #Definir el pin 22 como salida del (led/buzzer)
     
     # Callback for server RPC requests (Used for control servo and led blink)
     def on_server_side_rpc_request(client, request_id, request_body):
@@ -53,7 +53,6 @@ def main():
     client = TBDeviceMqttClient(thingsboard_server, access_token)
     #client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
     client.connect()
-    
     
     
     def on_event():
@@ -82,20 +81,16 @@ def main():
                 
                 situTemp = ht.controlTemperatura(humtemp[0])
                 situHum= ht.controlHumedad(humtemp[1])
-              
                 situLuz = l.situacionDeLuz(situacion_luz)
-                print(situLuz)
-                if(situLuz== -1):
+                
+                if(situLuz == -1 or situLuz == 1):
                     GPIO.output(22, True)
-                    print("Entr")
+                 
                     time.sleep(.2)
                 else:
                     GPIO.output(22,False)
                 
-                
-                time.sleep(.10) # mide todo cada x tiempo (2seg)
-                
-
+                time.sleep(.2) # mide todo cada x tiempo (2seg)
                 
         except Exception as e:
             raise e
