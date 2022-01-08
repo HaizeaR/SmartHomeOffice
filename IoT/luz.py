@@ -33,5 +33,17 @@ class Iluminacion():
             situacion = 0 
             
         return situacion
+    
+    def situacionLuz2(self, luz):
+        situacion = False
+        
+        if(luz < 150):
+            situacion = True
+        elif(luz > 400):
+            situacion = True
+        else:
+            sitaucion = False
+        
+        return situacion
 
 

@@ -79,17 +79,48 @@ def main():
                 # Sending the data
                 client.send_telemetry(telemetry).get()
                 
-                situTemp = ht.controlTemperatura(humtemp[0])
-                situHum= ht.controlHumedad(humtemp[1])
-                situLuz = l.situacionDeLuz(situacion_luz)
+
                 
+                situLuz = l.situacionLuz2(situacion_luz)
+                GPIO.output(22, situLuz)
+                print("LED luz " + str(situLuz))
+                
+                #situDistancia = d.errorDistancia(self, distanciaPersona)
+                #GPIO.output(23, situDistancia)
+                #print("LED distancia " + str(situDistancia))
+                
+                situTemp = ht.controlTemperatura2(humtemp[0])
+                #GPIO.output(24, situDistancia)
+                print("LED temp " + str(situTemp))
+                
+                situHum= ht.controlHumedad2(humtemp[1])
+                #GPIO.output(25, situDistancia)
+                print("LED humedad " + str(situHum))
+                
+                
+                '''
                 if(situLuz == -1 or situLuz == 1):
                     GPIO.output(22, True)
-                 
+                    print("Led LUZ encencidad")
                     time.sleep(.2)
                 else:
                     GPIO.output(22,False)
+                    print("Led LUZ apagada") 
+                    
                 
+                if(situTemp == -1 or situTemp == 1):
+                    GPIO.output(23, True)
+                     print("Led TEMP encencidad")
+                    time.sleep(.2)
+                else:
+                    
+                    GPIO.output(23,False)
+                    print("Led TEMP apagada")
+                    
+            
+                '''
+                    
+                print("--------------------")
                 time.sleep(.2) # mide todo cada x tiempo (2seg)
                 
         except Exception as e:
