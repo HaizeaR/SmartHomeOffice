@@ -15,34 +15,41 @@ class Movimiento():
     # mide que no se detecte movimiento en ninguno d elos tres ejes x-y-z
     def situacionParada(self, accl):
         
+        movimiento = False
         if (accl[0] == 0 and accl[1] == 0 and accl[2] == 0):
-            return True
+            movimiento = True
         else:
-            return False
-        
+            movimiento = False
+        return movimiento
+    
     # mide que no se detecte movimiento en el eje X
     def situacionX(self, accl):
-        
+        movimiento = False
         if (accl[0] == 0):
-            return True
+            movimiento = True
         else:
-            return False
-        
+            movimiento = False
+        return movimiento
+    
     # mide que no se detecte movimiento en el eje Y
     def situacionY(self, accl):
-        
-        if ( accl[1] == 0 ):
-            return True
+        movimiento = False
+        if (accl[1] == 0):
+            movimiento = True
         else:
-            return False
-        
+            movimiento = False
+        return movimiento
+    
     # mide que no se detecte movimiento en el eje Z
     def situacionZ(self, accl):
-        
+        movimiento = False
         if (accl[2] == 0):
-            return True
+            movimiento = True
         else:
-            return False
-        
-    def imprimirAccelereacion(self, accl);
+            movimiento = False
+            
+        return movimiento
+    
+    
+    def imprimirAccelereacion(self, accl):
         print ("\nX:",accl[0],"\tY:",accl[1],"\tZ:",accl[2])
