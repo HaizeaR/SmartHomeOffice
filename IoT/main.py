@@ -5,15 +5,9 @@ from grove.grove_servo import GroveServo
 from distance import Distancia
 from temp_hum import TemperaturaHumedad
 from luz import Iluminacion
+from movimiento import Movimiento
+
 from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
-
-
-# Configuration of logger, in this case it will send messages to console
-logging.basicConfig(level=logging.INFO,
-                    format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
-                    datefmt='%Y-%m-%d %H:%M:%S')
-
-log = logging.getLogger(__name__)
 
 thingsboard_server = "thingsboard.cloud"
 access_token = "XyuDAUVr1ukFPEoR59HX"
@@ -21,9 +15,17 @@ access_token = "XyuDAUVr1ukFPEoR59HX"
 
 def main():
     
+    # Configuration of logger, in this case it will send messages to console
+    logging.basicConfig(filename = "smartoffice.log",
+                    filemode = 'a',
+                    level=logging.DEBUG,
+                    format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
+    '''
     # Grove - Servo connected to PWM port
     servo = GroveServo(12)
     servo_angle = 90
+    '''
     
     # INCIALIZAR SENSORES
     # =======================
@@ -35,41 +37,37 @@ def main():
     
     GPIO.setup(22, GPIO.OUT) #Definir el pin 22 como salida del (led/buzzer)
     
-    # Callback for server RPC requests (Used for control servo and led blink)
-    def on_server_side_rpc_request(client, request_id, request_body):
-        log.info('received rpc: {}, {}'.format(request_id, request_body))
-        if request_body['method'] == 'getLedState':
-            client.send_rpc_reply(request_id, light_state)
-        elif request_body['method'] == 'setLedState':
-            light_state = request_body['params']
-            button.led.light(light_state)
-        elif request_body['method'] == 'setServoAngle':
-            servo_angle = float(request_body['params'])
-            servo.setAngle(servo_angle)
-        elif request_body['method'] == 'getServoAngle':
-            client.send_rpc_reply(request_id, servo_angle)
-
+    m = Movimiento()
+    
+    # CONECTARSE A LA PLATAFORMA THINGSBOARD CLOUD
+    # ============================================
+    
     # Connecting to ThingsBoard
     client = TBDeviceMqttClient(thingsboard_server, access_token)
     #client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
     client.connect()
     
+    contador_parada = 0
     
-    def on_event():
+    def on_event(contador_parada):
 
         try:
             while True:
                 # mide la distancia 
                 #distanciaPersona = d.calcularDistancia()
                 distanciaPersona = 20
-                log.debug('distancia: {} cm'.format(distanciaPersona))
+                logging.debug('distancia: {} cm'.format(distanciaPersona))
 
                 humtemp = ht.leerValores()
-                log.debug('temperatura: {}C, humedad: {}%'.format(humtemp[0], humtemp[1]))
+                logging.debug('temperatura: {}C, humedad: {}%'.format(humtemp[1], humtemp[0]))
 
                 situacion_luz = l.calcularLuminosidad()
-                log.debug('luz: {}'.format(situacion_luz))
-
+                logging.debug('luz: {}'.format(situacion_luz))
+                
+                #situacion_movimiento = m.calcularAceleracion()
+                accl  = [0,0,0]
+                logging.debug("X: {}   Y: {}  Z: {}".format(accl[0],accl[1],accl[2]))
+                
                 # Formatting the data for sending to ThingsBoard
                 telemetry = {'distancia': distanciaPersona,
                              'temperatura': humtemp[1],
@@ -78,26 +76,27 @@ def main():
 
                 # Sending the data
                 client.send_telemetry(telemetry).get()
-                
+                logging.info("Telemetry mandado")                
 
-                
+  
                 situLuz = l.situacionLuz2(situacion_luz)
                 GPIO.output(22, situLuz)
-                print("LED luz " + str(situLuz))
-                
+                logging.debug('LED luz {}'.format(situLuz))
+
                 #situDistancia = d.errorDistancia(self, distanciaPersona)
                 #GPIO.output(23, situDistancia)
-                #print("LED distancia " + str(situDistancia))
+                #logging.debug('LED distancia {}'.format(situDistancia))
                 
                 situTemp = ht.controlTemperatura2(humtemp[0])
                 #GPIO.output(24, situDistancia)
-                print("LED temp " + str(situTemp))
+                logging.debug('LED temperatura {}'.format(situTemp))
                 
                 situHum= ht.controlHumedad2(humtemp[1])
                 #GPIO.output(25, situDistancia)
-                print("LED humedad " + str(situHum))
+                logging.debug('LED humedad {}'.format(situHum))
                 
                 
+                # Esta es otra forma de resolverlo utilizando el otro método
                 '''
                 if(situLuz == -1 or situLuz == 1):
                     GPIO.output(22, True)
@@ -105,22 +104,26 @@ def main():
                     time.sleep(.2)
                 else:
                     GPIO.output(22,False)
-                    print("Led LUZ apagada") 
-                    
-                
-                if(situTemp == -1 or situTemp == 1):
-                    GPIO.output(23, True)
-                     print("Led TEMP encencidad")
-                    time.sleep(.2)
-                else:
-                    
-                    GPIO.output(23,False)
-                    print("Led TEMP apagada")
-                    
+                    print("Led LUZ apagada")         
             
-                '''
+                '''       
+                
+                #En este punto se trabaja la funcionalidad de movimiento
+                #Este sensor no funciona pero hemos tratado de crear la funcionalidad
+                
+                situacionParada = m.situacionParada(accl)
+                
+                if (situacionParada == True):
+                    contador_parada = contador_parada + 1 
+                else:
+                    contador_parada = 0
                     
-                print("--------------------")
+                    
+                if (contador_parada == 60):
+                    logger.info("Llevas 5 minutos descansando")
+                    contador_parada = 0       
+                
+                logging.debug('--------------------')
                 time.sleep(.2) # mide todo cada x tiempo (2seg)
                 
         except Exception as e:
@@ -130,9 +133,10 @@ def main():
             client.disconnect()
             GPIO.cleanup()
         
-        return [situTemp, situHum]
-
-    on_event()
+        
+        
+    
+    on_event(contador_parada)
   
         
         
