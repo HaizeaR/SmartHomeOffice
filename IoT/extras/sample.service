@@ -1,0 +1,11 @@
+ [Unit]
+ Description=SmartOffice 
+ After=multi-user.target
+
+ [Service]
+ Type=idle
+ ExecStart=/usr/bin/python3 /home/pi/Desktop/IoT/main.py > /home/pi/Desktop/IoT/log.txt
+ Restart=always 
+
+ [Install]
+ WantedBy=multi-user.target
