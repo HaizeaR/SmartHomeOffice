@@ -23,10 +23,10 @@ def main():
     
     with RestClientPE(base_url=url) as rest_client:
         try:
-            print("Entra")
+            
             # Auth with credentials
             rest_client.login(username=username, password=password)
-            print("Entra")
+            
             # Getting current user
             current_user = rest_client.get_user()
             print(current_user)
@@ -37,7 +37,7 @@ def main():
 
             # Loading Dashboard from file
             dashboard_json = None
-            with open("/home/pi/Desktop/IoT/smartoffice.json", "r") as dashboard_file:
+            with open("/home/pi/Desktop/IoT/jsons/smartoffice.json", "r") as dashboard_file:
                 dashboard_json = load(dashboard_file)
             dashboard = Dashboard(title=dashboard_json["title"], configuration=dashboard_json["configuration"])
             dashboard = rest_client.save_dashboard(dashboard)
@@ -50,7 +50,7 @@ def main():
             customer1 = rest_client.save_customer(customer1)
 
             # Creating Device
-            device = Device(name="SmartOffice1", type="SmartOffice")
+            device = Device(name="SmartOfficeDemo", type="SmartOffice")
             device = rest_client.save_device(device)
 
             # Fetching automatically created "Customer Administrators" Group.
@@ -63,6 +63,7 @@ def main():
             # Assigning Shared Dashboards to the Customer 1 Administrators
             tenant_id = current_user.tenant_id
             print(tenant_id)
+            '''
             group_permission = GroupPermission(role_id=read_only_role.id,
                                                name="Read Only Permission",
                                                is_public=False,
@@ -70,10 +71,10 @@ def main():
                                                tenant_id=tenant_id,
                                                entity_group_id=shared_dashboards_group.id,
                                                entity_group_type=shared_dashboards_group.type)
-            group_permission = rest_client.save_group_permission(group_permission)
-
+            #group_permission = rest_client.save_group_permission(group_permission)
+            
             # Creating User for Customer 1 with default dashboard from Tenant "Shared Dashboards" group.
-            user_email = "user@thingsboard.org"
+            user_email = "userHaizea@thingsboard.org"
             user_password = "secret"
             additional_info = {
                 "defaultDashboardId": dashboard.id.id,
@@ -87,7 +88,7 @@ def main():
             rest_client.activate_user(user.id, user_password)
 
             rest_client.add_entities_to_entity_group([user.id.id], customer1_administrators.id)
-
+            '''
         except ApiException as e:
             logging.exception(e)
 

@@ -26,6 +26,19 @@ class TemperaturaHumedad():
             situTemp = -1
         
         return situTemp
+    
+    def controlTemperatura2(self, temp):
+        
+        situTemp = False
+        
+        if (temp < 20):
+            situTemp = True
+        elif (temp > 22):
+            situTemp = True
+        else:
+            situTemp = False
+        
+        return situTemp
         
     # -1 humedad demasiado alta
     #  0 todo bien
@@ -39,6 +52,20 @@ class TemperaturaHumedad():
             situHum = 1
         elif (hum > 50):
             situHum = -1
+        
+        return situHum 
+        
+
+    def controlHumedad2(self, hum):
+        
+        situHum = False
+        
+        if (hum < 30):
+            situHum = True
+        elif (hum > 50):
+            situHum = True
+        else:
+            situHum = False
         
         return situHum 
         

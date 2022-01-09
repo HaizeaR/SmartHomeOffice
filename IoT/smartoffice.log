@@ -1,0 +1,174 @@
+2022-01-09 19:04:23 - INFO - tb_device_mqtt - 271 - Trying to connect to thingsboard.cloud...
+2022-01-09 19:04:24 - INFO - tb_device_mqtt - 271 - Trying to connect to thingsboard.cloud...
+2022-01-09 19:04:25 - INFO - tb_device_mqtt - 271 - Trying to connect to thingsboard.cloud...
+2022-01-09 19:04:26 - INFO - tb_device_mqtt - 271 - Trying to connect to thingsboard.cloud...
+2022-01-09 19:04:27 - INFO - tb_device_mqtt - 271 - Trying to connect to thingsboard.cloud...
+2022-01-09 19:04:28 - INFO - tb_device_mqtt - 271 - Trying to connect to thingsboard.cloud...
+2022-01-09 19:04:29 - INFO - tb_device_mqtt - 271 - Trying to connect to thingsboard.cloud...
+2022-01-09 19:04:30 - INFO - tb_device_mqtt - 239 - connection SUCCESS
+2022-01-09 19:04:30 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:04:31 - DEBUG - main - 62 - temperatura: 20C, humedad: 66%
+2022-01-09 19:04:31 - DEBUG - main - 65 - luz: 95
+2022-01-09 19:04:31 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:04:41 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:04:41 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:04:41 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:04:41 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:04:41 - DEBUG - main - 126 - --------------------
+2022-01-09 19:04:41 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:04:42 - DEBUG - main - 62 - temperatura: 20C, humedad: 66%
+2022-01-09 19:04:42 - DEBUG - main - 65 - luz: 96
+2022-01-09 19:04:42 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:04:51 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:04:51 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:04:51 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:04:51 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:04:51 - DEBUG - main - 126 - --------------------
+2022-01-09 19:04:51 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:04:51 - DEBUG - main - 62 - temperatura: 20C, humedad: 66%
+2022-01-09 19:04:51 - DEBUG - main - 65 - luz: 96
+2022-01-09 19:04:51 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:05:01 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:05:01 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:05:01 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:05:01 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:05:01 - DEBUG - main - 126 - --------------------
+2022-01-09 19:05:01 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:05:04 - DEBUG - main - 62 - temperatura: 20C, humedad: 74%
+2022-01-09 19:05:04 - DEBUG - main - 65 - luz: 97
+2022-01-09 19:05:04 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:05:12 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:05:12 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:05:12 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:05:12 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:05:12 - DEBUG - main - 126 - --------------------
+2022-01-09 19:05:13 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:05:16 - DEBUG - main - 62 - temperatura: 20C, humedad: 74%
+2022-01-09 19:05:16 - DEBUG - main - 65 - luz: 97
+2022-01-09 19:05:16 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:05:22 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:05:22 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:05:22 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:05:22 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:05:22 - DEBUG - main - 126 - --------------------
+2022-01-09 19:05:22 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:05:22 - DEBUG - main - 62 - temperatura: 20C, humedad: 74%
+2022-01-09 19:05:22 - DEBUG - main - 65 - luz: 97
+2022-01-09 19:05:22 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:05:32 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:05:32 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:05:32 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:05:32 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:05:32 - DEBUG - main - 126 - --------------------
+2022-01-09 19:05:32 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:05:33 - DEBUG - main - 62 - temperatura: 20C, humedad: 66%
+2022-01-09 19:05:33 - DEBUG - main - 65 - luz: 93
+2022-01-09 19:05:33 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:05:41 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:05:41 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:05:41 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:05:41 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:05:41 - DEBUG - main - 126 - --------------------
+2022-01-09 19:05:41 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:05:44 - DEBUG - main - 62 - temperatura: 20C, humedad: 75%
+2022-01-09 19:05:44 - DEBUG - main - 65 - luz: 28
+2022-01-09 19:05:44 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:05:48 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:05:48 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:05:48 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:05:48 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:05:48 - DEBUG - main - 126 - --------------------
+2022-01-09 19:05:48 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:05:48 - DEBUG - main - 62 - temperatura: 20C, humedad: 75%
+2022-01-09 19:05:48 - DEBUG - main - 65 - luz: 29
+2022-01-09 19:05:48 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:05:57 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:05:57 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:05:57 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:05:57 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:05:57 - DEBUG - main - 126 - --------------------
+2022-01-09 19:05:57 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:05:58 - DEBUG - main - 62 - temperatura: 20C, humedad: 70%
+2022-01-09 19:05:58 - DEBUG - main - 65 - luz: 92
+2022-01-09 19:05:58 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:06:04 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:06:04 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:06:04 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:06:04 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:06:04 - DEBUG - main - 126 - --------------------
+2022-01-09 19:06:05 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:06:06 - DEBUG - main - 62 - temperatura: 20C, humedad: 68%
+2022-01-09 19:06:06 - DEBUG - main - 65 - luz: 281
+2022-01-09 19:06:06 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:06:16 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:06:16 - DEBUG - main - 84 - LED luz False
+2022-01-09 19:06:16 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:06:16 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:06:16 - DEBUG - main - 126 - --------------------
+2022-01-09 19:06:16 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:06:16 - DEBUG - main - 62 - temperatura: 20C, humedad: 76%
+2022-01-09 19:06:16 - DEBUG - main - 65 - luz: 214
+2022-01-09 19:06:16 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:06:23 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:06:23 - DEBUG - main - 84 - LED luz False
+2022-01-09 19:06:23 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:06:23 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:06:23 - DEBUG - main - 126 - --------------------
+2022-01-09 19:06:23 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:06:23 - DEBUG - main - 62 - temperatura: 20C, humedad: 68%
+2022-01-09 19:06:23 - DEBUG - main - 65 - luz: 176
+2022-01-09 19:06:23 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:06:34 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:06:34 - DEBUG - main - 84 - LED luz False
+2022-01-09 19:06:34 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:06:34 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:06:34 - DEBUG - main - 126 - --------------------
+2022-01-09 19:06:34 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:06:34 - DEBUG - main - 62 - temperatura: 20C, humedad: 68%
+2022-01-09 19:06:34 - DEBUG - main - 65 - luz: 47
+2022-01-09 19:06:34 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:06:42 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:06:42 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:06:42 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:06:42 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:06:42 - DEBUG - main - 126 - --------------------
+2022-01-09 19:06:42 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:06:44 - DEBUG - main - 62 - temperatura: 20C, humedad: 67%
+2022-01-09 19:06:44 - DEBUG - main - 65 - luz: 96
+2022-01-09 19:06:44 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:06:54 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:06:54 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:06:54 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:06:54 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:06:54 - DEBUG - main - 126 - --------------------
+2022-01-09 19:06:55 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:06:55 - DEBUG - main - 62 - temperatura: 20C, humedad: 74%
+2022-01-09 19:06:55 - DEBUG - main - 65 - luz: 96
+2022-01-09 19:06:55 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:07:01 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:07:01 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:07:01 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:07:01 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:07:01 - DEBUG - main - 126 - --------------------
+2022-01-09 19:07:02 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:07:02 - DEBUG - main - 62 - temperatura: 20C, humedad: 68%
+2022-01-09 19:07:02 - DEBUG - main - 65 - luz: 97
+2022-01-09 19:07:02 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:07:13 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:07:13 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:07:13 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:07:13 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:07:13 - DEBUG - main - 126 - --------------------
+2022-01-09 19:07:13 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:07:13 - DEBUG - main - 62 - temperatura: 20C, humedad: 68%
+2022-01-09 19:07:13 - DEBUG - main - 65 - luz: 96
+2022-01-09 19:07:13 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
+2022-01-09 19:07:24 - INFO - main - 79 - Telemetry mandado
+2022-01-09 19:07:24 - DEBUG - main - 84 - LED luz True
+2022-01-09 19:07:24 - DEBUG - main - 92 - LED temperatura True
+2022-01-09 19:07:24 - DEBUG - main - 96 - LED humedad True
+2022-01-09 19:07:24 - DEBUG - main - 126 - --------------------
+2022-01-09 19:07:24 - DEBUG - main - 59 - distancia: 20 cm
+2022-01-09 19:07:24 - DEBUG - main - 62 - temperatura: 20C, humedad: 68%
+2022-01-09 19:07:24 - DEBUG - main - 65 - luz: 97
+2022-01-09 19:07:24 - DEBUG - main - 69 - X: 0   Y: 0  Z: 0
