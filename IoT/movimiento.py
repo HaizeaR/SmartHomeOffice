@@ -7,7 +7,7 @@ class Movimiento():
     def __init__(self):
         pass
     
-    def calcularAcceleracion(self):
+    def calcularAceleracion(self):
         
         accl = acc_xyz()# Get the value from the accelerometer
         return accl
@@ -51,5 +51,5 @@ class Movimiento():
         return movimiento
     
     
-    def imprimirAccelereacion(self, accl):
-        print ("\nX:",accl[0],"\tY:",accl[1],"\tZ:",accl[2])
+    def imprimirAceleracion(self, accl):
+        print ("X:",accl[0],"\tY:",accl[1],"\tZ:",accl[2])
