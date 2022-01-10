@@ -16,7 +16,7 @@ access_token = "XyuDAUVr1ukFPEoR59HX"
 def main():
     
     # Configuration of logger, in this case it will send messages to console
-    logging.basicConfig(filename = "smartoffice.log",
+    logging.basicConfig(filename = "/home/pi/Desktop/IoT/smartoffice.log",
                     filemode = 'a',
                     level=logging.DEBUG,
                     format='%(asctime)s - %(levelname)s - %(module)s - %(lineno)d - %(message)s',
@@ -46,13 +46,20 @@ def main():
     client = TBDeviceMqttClient(thingsboard_server, access_token)
     #client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
     client.connect()
-    
+    # contador utilizado apra calcular si el trabjador se mueve o no, utilizado dentro del método on event
     contador_parada = 0
     
+    
+    #Método que se encarga de capturar los datos de los sensores y subirlos a la plataforma
+    # Se trata de un bucle infinito que ejecuta todas las acciones cada 2 segundos aprox.
     def on_event(contador_parada):
 
         try:
+            #bucle infinito
             while True:
+                
+                ##CAPTURA DE DATOS
+                # =========================================
                 # mide la distancia 
                 #distanciaPersona = d.calcularDistancia()
                 distanciaPersona = 20
@@ -68,6 +75,8 @@ def main():
                 accl  = [0,0,0]
                 logging.debug("X: {}   Y: {}  Z: {}".format(accl[0],accl[1],accl[2]))
                 
+                #TELEMETRY
+                #===============================
                 # Formatting the data for sending to ThingsBoard
                 telemetry = {'distancia': distanciaPersona,
                              'temperatura': humtemp[1],
@@ -78,7 +87,8 @@ def main():
                 client.send_telemetry(telemetry).get()
                 logging.info("Telemetry mandado")                
 
-  
+                #OUTPUTS - LEDS
+                #==================================
                 situLuz = l.situacionLuz2(situacion_luz)
                 GPIO.output(22, situLuz)
                 logging.debug('LED luz {}'.format(situLuz))
@@ -132,13 +142,10 @@ def main():
         finally:
             client.disconnect()
             GPIO.cleanup()
-        
-        
-        
+             
     
     on_event(contador_parada)
-  
-        
+     
         
 if __name__ == "__main__":
     main()

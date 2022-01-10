@@ -2,11 +2,15 @@ import time
 from grovepi import *
 import math
 
+
+#Clase que representa el comportamiento del sensor 3-axis accelerometer
 class Movimiento():
     
+    # constructor: se indica el puerto al que se va a conectar el sensor    
     def __init__(self):
         pass
     
+    # método encargado de leer los valores 
     def calcularAceleracion(self):
         
         accl = acc_xyz()# Get the value from the accelerometer
@@ -50,6 +54,4 @@ class Movimiento():
             
         return movimiento
     
-    
-    def imprimirAceleracion(self, accl):
-        print ("X:",accl[0],"\tY:",accl[1],"\tZ:",accl[2])
+
