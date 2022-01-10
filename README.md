@@ -92,6 +92,24 @@ Contiene los Jsons que replican los Dashboards que se encontrarán en la platafo
 
 Este fichero es independiente del resto de clases, en este se intenta crear una REST API mediante la cual se creen grupos de clientes, devices, dashboards compartidos y se creen nuevos usuarios. La idea de este fichero es ser capaz de automatizar por código funcionalidades clave de la plataforma Thingsboard cloud. Este fichero solo se debería ejecutar una única vez y así crear todos los componentes definidos en el mismo, ahorrandonos la necesidad de crearlos a mano.
 
+## Otras funcionalidades útiles de la plataforma
+
+### Schedule correo electrónico 
+Una de las funcionalidades interesantes de la plataforma que proponemos utilizar es la programación de correos electronicos que manden el estado de los análisis al final de la semana. Un ejemplo de lo mismo es lo siguiente: 
+
+<img width="924" alt="image" src="https://user-images.githubusercontent.com/47828252/148797380-08870c73-8d7c-4c75-8026-df4ebc89ff21.png">
+
+
+### APP ThingsBoard Cloud
+
+La idea es que como la propia plataforma dispone de una aplicación movil en la que se peudan visualizar los datos, los trabajadores utilicen la misma para controlar el estado de su entorno de trabajo. 
+
+> https://thingsboard.io/products/mobile-pe/
+> 
+> https://thingsboard.io/products/mobile/
+
+
+
 
 ---------
 Si es la primera vez que haces uso de una Raspberry Pi puedes mirar en este enlace información sobre sus sensores básicos y ejemplos de como utilizarlos: https://wiki.seeedstudio.com/Grove_Base_Kit_for_Raspberry_Pi/ 
