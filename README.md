@@ -75,8 +75,18 @@ En la siguiente página se muestra paso por paso como se hace uso de este .servi
 Contiene los Jsons que replican los Dashboards que se encontrarán en la plataforma. 
 
 - SmartOffice -> muestra los datos capturados por el sensor. 
+
+<img width="1004" alt="image" src="https://user-images.githubusercontent.com/47828252/148782837-ffdb8a7a-93de-4c5f-bf56-8723e30b3872.png">
+
 - SmartOfficeAnálisis -> muestra un historico del sensor mediante el cual se pueden hacer pequeños análisis.
+
+<img width="1050" alt="image" src="https://user-images.githubusercontent.com/47828252/148783157-ada641ec-d622-46be-9498-a04b440ca651.png">
+<img width="1059" alt="image" src="https://user-images.githubusercontent.com/47828252/148784115-0bb93e6c-04d7-46ee-8746-b73ff595752c.png">
+<img width="1058" alt="image" src="https://user-images.githubusercontent.com/47828252/148784152-5d63f9f7-eee5-406f-a901-7fe7f078ae69.png">
+
 - SmartOfficeAnálisisGeneral -> muestra un resumen histórico de los datos de varios devices. 
+<img width="1028" alt="image" src="https://user-images.githubusercontent.com/47828252/148784430-0df4477f-b1e3-406a-9ee5-cba259935226.png">
+<img width="1062" alt="image" src="https://user-images.githubusercontent.com/47828252/148784465-fcc8b60c-7d72-4068-9573-04e59d43c36d.png">
 
 ### creargrupo.py
 
