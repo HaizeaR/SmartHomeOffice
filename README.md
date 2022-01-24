@@ -1,5 +1,6 @@
 # SmartHomeOffice
 
+> Miembros del equipo: Mireya Quintana y Haizea Rodriguez.
 
 ## Propuesta de proyecto 
 
@@ -114,6 +115,7 @@ La idea es que como la propia plataforma dispone de una aplicación movil en la 
 ---------
 Si es la primera vez que haces uso de una Raspberry Pi puedes mirar en este enlace información sobre sus sensores básicos y ejemplos de como utilizarlos: https://wiki.seeedstudio.com/Grove_Base_Kit_for_Raspberry_Pi/ 
 
-> Recuerda establecer una conexión a internet mediante cable o red wifi. 
+> Recuerda establecer una conexión a internet mediante cable o red wifi.
 
 
+Proyecto realizado en la asignatura de ***Desarrollo de Aplicaciones para Internet de las Cosas.***  
