@@ -1,6 +1,10 @@
 # SmartHomeOffice
 
+Proyecto realizado en la asignatura de ***Desarrollo de Aplicaciones para Internet de las Cosas.***  
+
 > Miembros del equipo: Mireya Quintana y Haizea Rodriguez.
+
+
 
 ## Propuesta de proyecto 
 
@@ -118,4 +122,4 @@ Si es la primera vez que haces uso de una Raspberry Pi puedes mirar en este enla
 > Recuerda establecer una conexión a internet mediante cable o red wifi.
 
 
-Proyecto realizado en la asignatura de ***Desarrollo de Aplicaciones para Internet de las Cosas.***  
+
